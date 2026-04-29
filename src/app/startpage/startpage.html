@@ -1,16 +1,20 @@
 <div class="startpage-content">
-    <table>
-        <tr>
-            <th>Kurskod</th>
-            <th>Kursnamn</th>
-            <th>Progression</th>
-            <th>Syllabus</th>
-        </tr>
-        <tr *ngFor = "let course of courseList">
-            <td>{{ course.code }}</td>
-            <td>{{ course.coursename }}</td>
-            <td>{{ course.progression }}</td>
-            <td><a [href]="course.syllabus" target="_blank">Länk</a></td>
-        </tr>
+    <table class="startpage-table">
+        <thead>
+            <tr>
+                <th>Kurskod</th>
+                <th>Kursnamn</th>
+                <th>Progression</th>
+                <th>Syllabus</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let course of courseList">
+                <td>{{ course.code }}</td>
+                <td>{{ course.coursename }}</td>
+                <td>{{ course.progression }}</td>
+                <td><a class="syllabus-link" [href]="course.syllabus" target="_blank">Länk</a></td>
+            </tr>
+        </tbody>
     </table>
 </div>
