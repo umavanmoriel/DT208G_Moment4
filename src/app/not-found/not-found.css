@@ -1,0 +1,16 @@
+.not-found-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+}
+
+.error-image {
+    height: 200px;
+}
+
+.error {
+    font-size: 2rem;
+    color: 	#ff7ab9;
+}
