@@ -8,19 +8,19 @@
             <tr>
                 <th (click)="setSortBy('code')"> 
                     Kurskod 
-                    <span>
+                    <span class="sort-icon">
                         {{ sortBy === 'code' ? (sortDirection === 'asc' ? '▲' : '▼') : '▲▼' }}
                     </span>
                 </th>
                 <th (click)="setSortBy('coursename')">
                     Kursnamn 
-                    <span>
+                    <span class="sort-icon">
                         {{ sortBy === 'coursename' ? (sortDirection === 'asc' ? '▲' : '▼') : '▲▼' }}
                     </span>
                 </th>
                 <th (click)="setSortBy('progression')">
                     Progression 
-                    <span>
+                    <span class="sort-icon">
                         {{ sortBy === 'progression' ? (sortDirection === 'asc' ? '▲' : '▼') : '▲▼' }}
                     </span>
                 </th>
