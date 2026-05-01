@@ -60,3 +60,41 @@
   text-align: center;
   caption-side: bottom;
 }
+
+.error-message {
+    font-size: 1rem;
+    color: #d45a9e;
+    padding: 10px 20px;
+}
+
+.course-filter {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.filter-label {
+  font-size: 0.9rem;
+  color: #ff7ab9;
+  font-weight: 500;
+}
+
+.filter-input {
+  width: 280px;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s;
+  font-size: 0.9rem;
+  border: 1px solid #ffcee5;
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: #ff7ab9;
+  box-shadow: 0 4px 12px rgba(255, 122, 185, 0.1);
+}
