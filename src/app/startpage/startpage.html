@@ -1,26 +1,30 @@
 <div class="startpage-content">
     <div class="course-filter">
         <label class="filter-label" for="filter">Filtrera:</label>
-        <input class="filter-input" type="text" id="filter" [(ngModel)] = "filterValue" (input)="applyFilter()">
+        <input class="filter-input" type="text" id="filter" [(ngModel)] = "filterValue" (input)="applyFilter()" placeholder="Sök kurser...">
+        <img [src]="searchIcon" alt="Sök ikon" class="search-icon">
     </div>
     <table class="startpage-table">
         <thead>
             <tr>
-                <th (click)="setSortBy('code')"> 
+                <th (click)="setSortBy('code')">
                     Kurskod 
-                    <span class="sort-icon">
+                    <span class="sort-icon" 
+                        [style.color]="sortBy === 'code' ? '#ff7ab9' : '#999'">
                         {{ sortBy === 'code' ? (sortDirection === 'asc' ? '▲' : '▼') : '▲▼' }}
                     </span>
                 </th>
                 <th (click)="setSortBy('coursename')">
                     Kursnamn 
-                    <span class="sort-icon">
+                    <span class="sort-icon" 
+                        [style.color]="sortBy === 'coursename' ? '#ff7ab9' : '#999'">
                         {{ sortBy === 'coursename' ? (sortDirection === 'asc' ? '▲' : '▼') : '▲▼' }}
                     </span>
                 </th>
                 <th (click)="setSortBy('progression')">
                     Progression 
-                    <span class="sort-icon">
+                    <span class="sort-icon" 
+                        [style.color]="sortBy === 'progression' ? '#ff7ab9' : '#999'">
                         {{ sortBy === 'progression' ? (sortDirection === 'asc' ? '▲' : '▼') : '▲▼' }}
                     </span>
                 </th>

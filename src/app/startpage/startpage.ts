@@ -65,4 +65,6 @@ export class Startpage implements OnInit {
     }
     this.applyFilter();
   }
+
+  searchIcon : string = "/images/search-icon.svg";
 }
