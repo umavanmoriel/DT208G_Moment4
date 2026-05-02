@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Course } from '../model/courses';
 import { CourseService } from '../services/courses';
 import { CommonModule } from '@angular/common';
@@ -21,18 +21,27 @@ export class Startpage implements OnInit {
   isLoading: boolean = true;
   errorMessage: string = "";
 
-  constructor(private courseservice: CourseService) { }
+
+  constructor(
+    private courseservice: CourseService,
+    private cdr: ChangeDetectorRef
+  ) { }
 
   ngOnInit() {
     this.courseservice.getCourse().subscribe(data => {
       this.courseList = data;
+      this.filteredCourses = data; 
+      
       this.applyFilter();
       this.isLoading = false;
+      
+      this.cdr.detectChanges(); 
     });
     error: (error: any) => {
         console.error('Fel vid hämtning:', error);
         this.errorMessage = 'Kunde inte ladda kurser';
         this.isLoading = false;
+        this.cdr.detectChanges();
     }
   }
 
@@ -63,6 +72,7 @@ export class Startpage implements OnInit {
     });
     
     this.filteredCourses = filtered;
+    this.cdr.detectChanges();
   }
 
   setSortBy(field: string): void {
