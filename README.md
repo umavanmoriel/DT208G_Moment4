@@ -1,5 +1,15 @@
 # DT208GMoment4
 
+## Syfte
+
+Uppgiften går ut på att:
+- Hämta kursdata från ett API
+- Visa datan i en tabell
+- Kunna sortera och söka i kurserna
+- Allt sker utan att sidan laddas om
+
+### Länk till publicerad sida [DT208G_Moment4](https://lighthearted-macaron-69666f.netlify.app/startpage)
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.8.
 
 ## Development server
