@@ -38,9 +38,20 @@
                 <td>{{ course.progression }}</td>
                 <td><a class="syllabus-link" [href]="course.syllabus" target="_blank">Länk</a></td>
             </tr>
-            @if(filteredCourses.length === 0) {
-                <p class="error-message">Inga kurser hitades ...</p>
-            }
+            <tr>
+                <td colspan="4"> 
+                    @if (isLoading) {
+                        <div class="loading-container">
+                            <div class="spinner"></div>
+                            <p>Laddar kurser...</p>
+                        </div>
+                    } @else if (filteredCourses.length === 0) {
+                        <div class="error-message">
+                            <p>Inga kurser matchar din sökning.</p>
+                        </div>
+                    }
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>

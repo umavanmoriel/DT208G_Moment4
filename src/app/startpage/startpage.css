@@ -1,7 +1,7 @@
 .startpage-content {
-  min-width: 800px;
+  min-width: 400px;
   margin: 0 auto;
-  padding: 100px 0px;
+  padding: 100px 50px;
 }
 
 .startpage-table {
@@ -22,9 +22,11 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   padding: 1rem 1.2rem;
+  width: 25rem;
   border-bottom: 2px solid #ffa2ce;
   text-align: left;  
 }
+
 
 .startpage-table td {
   padding: 0.9rem 1.2rem;
@@ -59,12 +61,6 @@
   color: #ffa2ce;
   text-align: center;
   caption-side: bottom;
-}
-
-.error-message {
-    font-size: 1rem;
-    color: #d45a9e;
-    padding: 10px 20px;
 }
 
 .course-filter {
@@ -112,4 +108,44 @@
   height: 18px;
   pointer-events: none;
   opacity: 0.5;
+}
+
+.sort-icon {
+  cursor: pointer;
+}
+
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    gap: 1rem;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #ffcee5;
+    border-top: 4px solid #ff7ab9;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-container p {
+    color: #ff7ab9;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.error-message {
+    font-size: 1rem;
+    color: #d45a9e;
+    padding: 10px 20px;
 }

@@ -18,13 +18,22 @@ export class Startpage implements OnInit {
   sortBy: string = "coursename";
   sortDirection: string = "asc";
 
+  isLoading: boolean = true;
+  errorMessage: string = "";
+
   constructor(private courseservice: CourseService) { }
 
   ngOnInit() {
     this.courseservice.getCourse().subscribe(data => {
       this.courseList = data;
       this.applyFilter();
+      this.isLoading = false;
     });
+    error: (error: any) => {
+        console.error('Fel vid hämtning:', error);
+        this.errorMessage = 'Kunde inte ladda kurser';
+        this.isLoading = false;
+    }
   }
 
   applyFilter(): void {
